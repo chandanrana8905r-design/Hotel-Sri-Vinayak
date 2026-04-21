@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOTEL SRI VINAYAK</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:radial-gradient(circle at top,#0f172a,#020617 60%,#000);color:white;overflow-x:hidden;}header{position:fixed;top:0;left:0;width:100%;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.05);backdrop-filter:blur(15px);z-index:1000;} header h1{color:gold;letter-spacing:2px;} nav a{color:white;margin:0 10px;text-decoration:none;transition:0.3s;} nav a:hover{color:gold;}
+
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;} .hero::before{content:'';position:absolute;width:200%;height:200%;background:conic-gradient(gold,#0ea5e9,#a855f7,gold);animation:spin 12s linear infinite;opacity:0.12;} @keyframes spin{100%{transform:rotate(360deg);}} .hero-content{position:relative;background:rgba(0,0,0,0.5);padding:30px;border-radius:20px;backdrop-filter:blur(10px);} .hero h2{font-size:50px;} .btn{background:linear-gradient(45deg,gold,#ffcc00);border:none;padding:12px 22px;border-radius:30px;font-weight:600;cursor:pointer;}
+
+.section{padding:90px 40px;text-align:center;} .section h2{color:gold;margin-bottom:25px;}
+
+.rooms,.services,.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+
+.card,.service-box,.review-box{ background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(10px); transition:0.3s; } .card:hover{transform:translateY(-10px);box-shadow:0 0 25px rgba(255,215,0,0.2);}
+
+.room-title{font-size:20px;color:gold;margin:10px 0;} .room-features{font-size:14px;opacity:0.85;line-height:1.6;} .bed{font-size:18px;margin-top:8px;opacity:0.9;}
+
+.slider img{width:100%;height:400px;object-fit:cover;border-radius:20px;}
+
+iframe{width:100%;height:300px;border:none;border-radius:15px;} .footer{text-align:center;padding:20px;background:black;margin-top:40px;} </style>
+
+</head>
+<body><header>
+<h1>HOTEL SRI VINAYAK</h1>
+<nav>
+<a href="#rooms">Rooms</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
+<a href="#map">Location</a>
+<a href="#booking">Booking</a>
+</nav>
+</header><section class="hero">
+<div class="hero-content">
+<h2>Luxury Stay Experience</h2>
+<button class="btn" onclick="scrollToBooking()">Book Now</button>
+</div>
+| <section class="section" id="rooms">
+<h2>Luxury Rooms</h2>
+
+<div class="rooms">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+    <h3>Deluxe Room</h3>
+    <p class="bed">🛏️ King Size Luxury Bed</p>
+    <p>Soft mattress | Premium bedsheet | AC Room | TV</p>
+    <button class="btn">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+    <h3>AC Luxury Room</h3>
+    <p class="bed">🛏️ Queen Size Premium Bed</p>
+    <p>Elegant lighting | Clean interior | Room service</p>
+    <button class="btn">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+    <h3>Family Suite</h3>
+    <p class="bed">🛏️ 2 King Beds + Sofa Bed</p>
+    <p>Big space | Luxury interior | Dining area</p>
+    <button class="btn">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+    <h3>Presidential Suite</h3>
+    <p class="bed">🛏️ Ultra Luxury King Bed</p>
+    <p>Royal interior | Balcony view | VIP service</p>
+    <button class="btn">Book Now</button>
+  </div>
+
+</div>
+</section>
+</div><div class="card">
+<div class="room-title">Family Suite</div>
+<div class="bed">🛏️ 2 King Beds + Sofa Bed</div>
+<div class="room-features">✔ Big Space | ✔ TV | ✔ WiFi | ✔ Dining Area</div>
+</div><div class="card">
+<div class="room-title">Presidential Suite</div>
+<div class="bed">🛏️ Ultra Luxury King Bed</div>
+<div class="room-features">✔ Premium Interior | ✔ Jacuzzi | ✔ Balcony View | ✔ VIP Service</div>
+</div></div>
+</section><section class="section" id="services">
+<h2>Services</h2>
+<div class="services">
+<div class="service-box">Free WiFi</div>
+<div class="service-box">Restaurant</div>
+<div class="service-box">Banquet Hall</div>
+<div class="service-box">24/7 Service</div>
+</div>
+</section><section class="section" id="reviews">
+<h2>⭐ Customer Reviews</h2>
+<div class="reviews" id="reviewList">
+<div class="review-box">⭐⭐⭐⭐⭐ Excellent stay and service!</div>
+<div class="review-box">⭐⭐⭐⭐ Very clean rooms and good food.</div>
+</div>
+</section><section class="section" id="gallery">
+<h2>Premium Gallery</h2>
+<img id="slide" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+<br><br>
+<button class="btn" onclick="prevImg()">⬅</button>
+<button class="btn" onclick="nextImg()">➡</button>
+</section><section class="section" id="map">
+<h2>Location</h2>
+<iframe src="https://maps.google.com/maps?q=hotel%20sri%20vinayak%20hazaribagh&output=embed"></iframe>
+</section><section class="section" id="booking">
+<h2>Book Now</h2>
+<input type="text" id="name" placeholder="Name">
+<input type="date" id="date">
+<br><br>
+<button class="btn" onclick="whatsappBook()">WhatsApp Booking</button>
+<button class="btn" onclick="payNow()">Pay Now</button>
+</section><div class="footer">© 2026 HOTEL SRI VINAYAK</div><script>
+let images=[
+"https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
+"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+];
+let i=0;
+function show(){document.getElementById('slide').src=images[i];}
+function nextImg(){i=(i+1)%images.length;show();}
+function prevImg(){i=(i-1+images.length)%images.length;show();}
+
+function whatsappBook(){
+let n=document.getElementById('name').value;
+let d=document.getElementById('date').value;
+window.open(`https://wa.me/919939868198?text=Booking%20${n}%20${d}`);
+}
+
+function payNow(){alert('Payment setup ready (Razorpay key add required)');}
+
+function scrollToBooking(){document.getElementById('booking').scrollIntoView({behavior:'smooth'});}
+</script></body>
+</html>
